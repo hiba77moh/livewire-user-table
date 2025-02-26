@@ -26,8 +26,8 @@
                                 <select 
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                                     <option value="">All</option>
-                                    <option value="0">User</option>
-                                    <option value="1">Admin</option>
+                                    <option wire:model="filter" value="0">User</option>
+                                    <option  wire:model="filter" value="1">Admin</option>
                                 </select>
                             </div>
                         </div>
