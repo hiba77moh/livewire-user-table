@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function scopeSearch($query , $vlaue){
+        $query->where('name','like',"%{$vlaue}%")->orwhere('email','like',"%{$vlaue}%");
+    }
 }
