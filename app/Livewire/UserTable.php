@@ -23,7 +23,7 @@ class UserTable extends Component
     {
         return view('livewire.user-table',[
             // 'users' => User::where('is_admin','like','%'.$this->filter.'%')->where('name','like','%'.$this->search.'%')->paginate($this->perPage) ,
-            'users' => User::search($this->search)->paginate($this->perPage)
+            'users' => User::search($this->search)->filter($this->filter)->paginate($this->perPage)
         ]);
     }
 }

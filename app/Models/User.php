@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function scopeSearch($query , $vlaue){
         $query->where('name','like',"%{$vlaue}%")->orwhere('email','like',"%{$vlaue}%");
     }
+
+    public function scopeFilter($query , $vlaue){
+        $query->where('is_admin','like',"%{$vlaue}%");
+    }
 }
