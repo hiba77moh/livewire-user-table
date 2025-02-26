@@ -4,18 +4,29 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\Attributes\Url;
 
 class UserTable extends Component
 {
 
     use WithPagination ;
 
+    #[Url(history:true)]
     public $search = '' ;
+    
+    #[Url(history:true)]
     public $filter ;
+
+    #[Url(history:true)]
     public $id ;
+
+    #[Url(history:true)]
     public $perPage  = 10 ;
 
+    #[Url(history:true)]
     public $sortBy = 'name';
+
+    #[Url(history:true)]
     public $sortDir= 'asc';
 
     public function delete($id){
