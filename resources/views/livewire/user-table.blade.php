@@ -49,7 +49,7 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
-                                <tr class="border-b dark:border-gray-700">
+                                <tr wire:key='{{$user->id}}' class="border-b dark:border-gray-700">
                                     <th scope="row"
                                     class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{$user->name}}</th>
@@ -60,8 +60,11 @@
                                     <td class="px-4 py-3">{{$user->created_at->format('d/m/Y')}}</td> <!-- Formatted date -->
                                     <td class="px-4 py-3">{{$user->updated_at->format('d/m/Y')}}</td> <!-- Formatted date -->
                                     <td class="px-4 py-3 flex items-center justify-end">
-                                        <button wire:click='delete({{$user->id}})' class="px-3 py-1 bg-red-500 text-white rounded">X</button>
-                                    </td>
+                                        <button onclick="confirm('Are you sure you want to delete {{$user->name}}?') ? null : event.stopImmediatePropagation();" 
+                                            wire:click='delete({{$user->id}})' 
+                                            class="px-3 py-1 bg-red-500 text-white rounded">
+                                        X</button>
+                                                                        </td>
                                 </tr> <!-- Moved closing tag here -->
                                 @endforeach
                             </tbody>
