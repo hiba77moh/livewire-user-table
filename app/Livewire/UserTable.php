@@ -6,10 +6,13 @@ use Livewire\Component;
 
 class UserTable extends Component
 {
+
+    public $search = '' ;
+
     public function render()
     {
         return view('livewire.user-table',[
-            'users' => User::all() ,
+            'users' => User::where('name','like','%'.$this->search.'%')->paginate(10)
         ]);
     }
 }
