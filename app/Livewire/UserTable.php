@@ -38,6 +38,11 @@ class UserTable extends Component
         $this->sortDir = $this->sortDir === 'asc'? 'desc' : 'asc';
     }
 
+    // the name fo the function should be updated + the name of the variable you want to reset
+    public function updatedSearch(){
+        $this->resetPage();
+    }
+
     public function render()
     {
         return view('livewire.user-table',[
