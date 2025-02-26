@@ -37,11 +37,11 @@
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                                 <tr>
-                                    <th scope="col" class="px-4 py-3">Name</th>
-                                    <th scope="col" class="px-4 py-3">Email</th>
-                                    <th scope="col" class="px-4 py-3">Role</th>
-                                    <th scope="col" class="px-4 py-3">Joined</th>
-                                    <th scope="col" class="px-4 py-3">Last Update</th>
+                                    <th scope="col" class="px-4 py-3" wire:click='setSortBy("name")'>Name</th>
+                                    <th scope="col" class="px-4 py-3" wire:click='setSortBy("email")'>Email</th>
+                                    <th scope="col" class="px-4 py-3" wire:click='setSortBy("is_admin")'>Role</th>
+                                    <th scope="col" class="px-4 py-3" wire:click='setSortBy("created_at")'>Joined</th>
+                                    <th scope="col" class="px-4 py-3" wire:click='setSortBy("updated_at")'>Last Update</th>
                                     <th scope="col" class="px-4 py-3">
                                         <span class="sr-only">Actions</span>
                                     </th>
