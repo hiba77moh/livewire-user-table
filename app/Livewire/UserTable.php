@@ -15,9 +15,9 @@ class UserTable extends Component
     public $id ;
     public $perPage  = 10 ;
 
-    // public function delete(){
-    //     User::find($id)->delete();
-    // }
+    public function delete($id){
+        User::find($id)->delete();
+    }
 
     public function render()
     {
