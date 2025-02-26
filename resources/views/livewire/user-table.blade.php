@@ -63,11 +63,10 @@
                                     <td class="px-4 py-3">{{$user->created_at}}</td>
                                     <td class="px-4 py-3">{{$user->updated_at}}</td>
                                     <td class="px-4 py-3 flex items-center justify-end">
-                                        <button class="px-3 py-1 bg-red-500 text-white rounded">X</button>
+                                        <button wire:click='delete({{$user->id}})' class="px-3 py-1 bg-red-500 text-white rounded">X</button>
                                     </td>
                                     @endforeach
                                 </tr>
-    
                             </tbody>
                         </table>
                     </div>
@@ -86,6 +85,7 @@
                                 </select>
                             </div>
                         </div>
+                        {{$users->links()}}
                     </div>
                 </div>
             </div>
